@@ -1,0 +1,188 @@
+
+<div class="border border-danger m-4 ">
+  <form  class="">
+    <div class="row">
+      <div class="m-4 col-sm">
+        <label for="RegiaoSelect" class="form-label">Região</label>
+        <input type="text" class="form-control" placeholder="Disabled input">
+      </div>  
+      <div class="m-4 col-sm">
+        <label for="EspecieSelect" class="form-label">Especie</label>
+         <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" >
+      </div>  
+  
+      <div class="m-4 col-sm">
+        <label for="EspecieSelect" class="form-label">Status De Conservação</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" >
+      </div>  
+  
+      <div class="m-4 col-sm">
+        <label for="EspecieSelect" class="form-label">Nivel De Poluicao</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+      </div>  
+    </div>
+  
+  
+    <div class="row">
+        
+    
+  
+      <div class="m-4 col-sm">
+        <label for="disabledTextInput" class="form-label">Temperatura Min</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+      </div>  
+  
+  
+      <div class="m-4 col-sm">
+        <label for="disabledTextInput" class="form-label">Temperatura Max</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+      </div>  
+  
+      <div class="m-4 col-sm">
+        <label for="disabledTextInput" class="form-label">PH Min</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+      </div>  
+  
+      <div class="m-4 col-sm">
+        <label for="disabledTextInput" class="form-label">PH Max</label>
+        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+      </div>
+  
+  
+    </div>
+
+    <button type="submit" class="btn btn-success m-2">Enviar</button>
+
+    
+    
+  </form>
+
+
+</div>
+
+
+
+  <div class="">
+    <h2 class="m-4">Lista:</h2>
+
+    <div class="m-4 col-sm border border-danger ">        
+      <ul class="list-group  m-4  d-flex justify-content-center">
+        
+        
+          @for (item of ocean; track $index) {
+            <div class="row">
+              <div class="border border-success m-2 p-2 col">
+                  <h5>Região:</h5>
+                  <li  class="list-group-item">
+               
+                    {{item.regiao}}
+                  </li>
+              </div>
+              
+              
+  
+
+                <div class="col border border-success m-2 p-2">
+                  <h5>Especie:</h5>
+                  @for (item2 of item.especies; track $index) {
+                    <li  class="list-group-item">
+                    {{item2.nome}}
+                  </li>
+                  }
+
+                  <h5>Status:</h5>
+
+                  @for (item2 of item.especies; track $index) {
+                    <li  class="list-group-item">
+                    {{item2.status}}
+                  </li>
+                  }
+                </div>
+
+             <div class="col border border-success m-2 p-2">
+              <h5>Temperatura da Agua:</h5>
+              <li  class="list-group-item">
+                {{item.temperaturaAgua}}
+              </li>
+             </div>   
+
+
+             <div class="col border border-success m-2 p-2">
+              <h5>PH da Agua:</h5>
+              <li  class="list-group-item">
+                {{item.pH}}
+              </li>
+             </div> 
+             
+             <div class="col border border-success m-2 p-2">
+              <h5>Nivel de Poluicao:</h5>
+              <li  class="list-group-item">
+                {{item.nivelPoluicao}}
+              </li>
+             </div> 
+
+
+             <div class="col border border-success m-2 p-2">
+              <h5>Projetos de Conservacao:</h5>
+              @for (item2 of item.projetosConservacao; track $index) {
+                <li  class="list-group-item m-2">
+                  <h5>Nome do Projeto:</h5>
+                {{item2.nomeProjeto}}
+              </li>
+              }
+
+             
+
+              @for (item2 of item.projetosConservacao; track $index) {
+                <li  class="list-group-item m-2">
+                <h5>Tipo de Participação:</h5>
+                {{item2.tipoParticipacao}}
+              </li>
+              }
+
+              @for (item2 of item.projetosConservacao; track $index) {
+                <li  class="list-group-item m-2">
+                <h5>Tipo de Projeto:</h5>
+                {{item2.tipoProjeto}}
+              </li>
+              }
+            </div>
+
+
+
+                
+
+
+
+
+                 
+                
+              
+            </div>
+           
+            
+
+          }
+      </ul>
+
+      
+
+     
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+   
+  </div>
+
+
+
+
